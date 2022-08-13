@@ -1,0 +1,82 @@
+$maxWidth: 830px;
+$mediaWidth: 769px;
+@mixin white-btn {
+  background-color: white;
+  color: black;
+}
+@mixin header {
+  font-size: 34px;
+  font-weight: 600;
+}
+body {
+  margin: 0;
+  background: rgb(253,79,255);
+  background: linear-gradient(90deg, rgba(253,79,255,1) 0%, rgba(75,104,255,1) 100%);
+}
+header {
+  position: relative;
+  height: 75px;
+}
+a {
+  color: initial;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+button {
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.btn {
+  cursor: pointer;
+  padding: 7px 30px;
+  border-radius: 5px;
+  border: 0;
+  &-white {
+    @include white-btn;
+    &-outline {
+      background-color: transparent;
+      border: 1px solid;
+      border-color: white;
+      color: white;
+      &:hover,
+      &:focus-visible {
+        @include white-btn;
+      }
+    }
+    &:hover {
+      color: #c45dff;
+    }
+  }
+  &-purple {
+    background-color: rgb(252, 50, 255);
+    color: white;
+    &:hover {
+      background-color: rgb(252, 105, 255);
+      box-shadow: 0 0 10px rgb(252, 50, 255);
+    }
+  }
+  &-blue-outline {
+    background-color: transparent;
+    border: 1px solid deepskyblue;
+    color: deepskyblue;
+    &:hover,
+    &:focus-visible {
+      background-color: deepskyblue;
+      color: whitesmoke;
+    }
+  }
+  &-big {
+    padding: 12px 35px;
+    font-weight: 600;
+  }
+  &-arrow {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 0;
+    &_right {
+      right: 0;
+      left: auto;
+    }
+  }
+}

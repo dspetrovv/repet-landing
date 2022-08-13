@@ -1,0 +1,56 @@
+#teachers {
+  background-color: whitesmoke;
+  padding: 150px 0 0;
+}
+.teachers {
+  max-width: $maxWidth;
+  margin: auto;
+  &__header {
+    @include header;
+  }
+  &-block {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  &__teacher {
+    box-shadow: 0 0 5px grey;
+    border-radius: 5px;
+    width: 200px;
+    min-height: 65px;
+    padding: 10px 7px;
+    margin: 0 10px 50px;
+  }
+  &__avatar {
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    span {
+      top: 5px;
+    }
+    &.info__list-number > span::before {
+      top: -5px;
+    }
+  }
+  &__info {
+    margin: 10px;
+  }
+  &__name {
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+  }
+  &__text {
+    color: rgb(138, 138, 138);
+    height: 100%;
+    margin: 5px 0;
+    height: fit-content;
+    word-break: break-all;
+    text-align: justify;
+  }
+}

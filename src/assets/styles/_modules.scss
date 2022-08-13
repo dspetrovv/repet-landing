@@ -1,0 +1,145 @@
+#modules {
+  background-color: #d9dbed;
+  padding: 50px 0 200px;
+  position: relative;
+  > svg {
+    position: absolute;
+    width: 50px;
+    &:first-child {
+      top: 25px;
+      left: 60%;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      left: 90%;
+    }
+    &:nth-child(3) {
+      top: 80%;
+      left: 20px;
+    }
+  }
+}
+.modules {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  > * {
+    margin: 0 5px;
+  }
+  > :first-child {
+    margin-left: 0;
+  }
+  > :last-child {
+    margin-right: 0;
+  }
+  &__main-header {
+    @include header;
+    max-width: $maxWidth;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 265px;
+    margin-bottom: 10px;
+    &-block {
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 0 7px rgb(130, 130, 130);
+      border-radius: 5px;
+      height: 150px;
+      &_not-ready {
+        box-shadow: none;
+      }
+    }
+  }
+  &__photo {
+    &-block {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      &_not-ready::before {
+        content: '';
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+    object-fit: fill;
+    width: 101%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    &:hover {
+      transform: scale(1.2)
+    }
+  }
+  &__sticker {
+    @include sticker;
+    right: -5px;
+    background-color: #5d64ff;
+    color: white;
+    box-shadow: none;
+    &_soon {
+      background-color: #ff713e;
+    }
+  }
+  &__header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #232323;
+    z-index: 3;
+  }
+}
+.adv {
+  position: absolute;
+  bottom: -125px;
+  color: white;
+  border-radius: 5px;
+  background-color: darkblue;
+  width: 100%;
+  left: 0;
+  right: 0;
+  max-width: $maxWidth;
+  margin: auto;
+  &-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 35px 0;
+    svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      &.coral {
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+  &__header {
+    position: relative;
+    z-index: 10;
+    padding: 0 25px;
+    margin: 0 0 30px;
+    @include header;
+  }
+  &__button-block {
+    position: relative;
+    z-index: 10;
+    padding: 0 25px;
+    span {
+      display: inline-block;
+      width: 120px;
+      vertical-align: middle;
+      font-size: 14px;
+      margin-left: 20px;
+    }
+  }
+}

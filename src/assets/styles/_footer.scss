@@ -1,0 +1,48 @@
+#footer {
+  background-color: whitesmoke;
+  padding: 50px 0 50px;
+}
+.footer {
+  max-width: $maxWidth;
+  margin: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  color: #444444;
+  &__icon {
+    &s {
+      display: flex;
+      > * {
+        margin: 0 5px;
+      }
+      > :first-child {
+        margin-left: 0;
+      }
+      > :last-child {
+        margin-right: 0;
+      }
+    }
+    width: 32px;
+    height: 32px;
+    path {
+      transition: fill 0.2s ease-in-out;
+    }
+    &:hover {
+      path {
+        fill: rgb(253,79,255);
+      }
+    }
+  }
+  &__copyright {
+    position: absolute;
+    text-align: center;
+    left: calc(50% - 72px);
+  }
+  &__address {
+    text-align: right;
+    span {
+      display: block;
+    }
+  }
+}

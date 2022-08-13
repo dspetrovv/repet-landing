@@ -1,0 +1,248 @@
+@mixin fullBtn {
+  width: 100%;
+  padding: 12px 35px;
+}
+@mixin btnText {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 0;
+}
+@mixin burgerLayer {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  z-index: 14;
+}
+@media screen and (max-width: 890px) {
+  .general,
+  .info,
+  .modules,
+  .nav,
+  .teachers,
+  .footer,
+  .enter,
+  .modules__main-header,
+  .adv {
+    max-width: $mediaWidth;
+  }
+  .nav {
+    justify-content: space-between;
+    &-links {
+      display: none;
+      z-index: 12;
+    }
+    &-buttons {
+      cursor: pointer;
+      position: relative;
+      width: 20px;
+      height: 15px;
+      button {
+        display: none;
+      }
+      span {
+        opacity: 1;
+        transition: all 0.1s ease-in-out;
+      }
+      &::before {
+        content: '';
+        @include burgerLayer;
+        top: 0;
+      }
+      &::after {
+        content: '';
+        @include burgerLayer;
+        bottom: 0;
+      }
+      &_close {
+        z-index: 13;
+        span {
+          opacity: 0
+        }
+        &::before {
+          content: '';
+          @include burgerLayer;
+          top: 50%;
+          transform: rotate(45deg);
+        }
+        &::after {
+          content: '';
+          @include burgerLayer;
+          bottom: 0;
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &__burger {
+      @include burgerLayer;
+      top: calc(50% - 1px);
+    }
+  }
+}
+@media screen and (max-width: 830px) {
+  #general,
+  #info,
+  #nav,
+  #enter {
+    padding: 0 20px;
+  }
+  #teachers {
+    padding: 150px 20px 50px;
+  }
+  #modules {
+    padding: 50px 20px 200px;
+  }
+  #footer {
+    padding: 50px 20px;
+  }
+  #general svg {
+    width: calc(100% - 20px);
+  }
+  .main-wave {
+    left: -20px;
+    width: calc(100% + 20px) !important;
+  }
+}
+@media screen and (max-width: 769px) {
+  .coral {
+    border-bottom-right-radius: 0 !important;
+  }
+  .adv {
+    border-radius: 0;
+  }
+  .nav {
+    &-logo {
+      padding-left: 20px;
+    }
+    &-buttons {
+      margin-right: 20px;
+    }
+  }
+  #footer {
+    padding-bottom: 20px;
+  }
+  .footer {
+    flex-direction: column;
+    &__copyright {
+      position: relative;
+      left: 0;
+    }
+    > * {
+      margin: 10px 0;
+    }
+  }
+}
+@media screen and (max-width: 692px) {
+  .enter {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .teachers__teacher {
+    width: 250px;
+    margin: 0 0 50px;
+  }
+}
+@media screen and (max-width: 602px) {
+  #general svg {
+    bottom: 0;
+  }
+  .general {
+    flex-direction: column;
+    margin-bottom: 0;
+    &-title__age {
+      right: 0;
+    }
+    &__enter {
+      flex-direction: column;
+      button {
+        @include fullBtn;
+      }
+      span {
+        @include btnText;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .phone {
+    margin-left: 0;
+    align-self: center;
+    img {
+      position: relative;
+    }
+  }
+  .modules {
+    &__header {
+      font-size: 26px;
+    }
+    &__card {
+      width: 100%;
+      margin-bottom: 40px;
+      &-block {
+        height: auto;
+      }
+    }
+  }
+  .teachers__teacher {
+    width: 100%;
+    margin: 0 5px 25px;
+  }
+  .enter {
+    &__header {
+      margin-bottom: 20px;
+    }
+    &__button-block {
+      flex-direction: column;
+      > div {
+        width: 100%;
+      }
+      button {
+        @include fullBtn;
+      }
+      p {
+        @include btnText;
+      }
+    }
+  }
+  .adv {
+    &__button-block {
+      display: flex;
+      flex-direction: column;
+      span {
+        @include btnText;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    button {
+      @include fullBtn;
+    }
+  }
+  .info {
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+    &__image {
+      margin-right: 0 !important;
+    }
+    &__text {
+      margin-bottom: 20px;
+      margin-left: 0 !important;
+    }
+  }
+}
+@media screen and (max-width: 515px) {
+  #modules {
+    > svg {
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}

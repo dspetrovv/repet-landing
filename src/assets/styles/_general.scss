@@ -1,0 +1,85 @@
+@mixin sticker {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(-20deg);
+  border-radius: 5px;
+  background-color: #c45dff;
+  padding: 5px 12px;
+  font-weight: 600;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+#general {
+  position: relative;
+  svg {
+    position: absolute;
+    bottom: -200px;
+    width: 100%;
+  }
+}
+.general {
+  display: flex;
+  justify-content: center;
+  max-width: $maxWidth;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 200px;
+  position: relative;
+  z-index: 10;
+  &-info {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 20px;
+  }
+  &-title {
+    position: relative;
+    &__text {
+      margin-bottom: 10px;
+      @include header;
+    }
+    &__age {
+      @include sticker;
+      right: -40px;
+    }
+  }
+  &__ad {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  &__places {
+    display: inline-block;
+    width: 120px;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+}
+.phone {
+  margin-left: 50px;
+  position: relative;
+  min-width: 214px;
+  img {
+    position: absolute;
+    z-index: 5;
+  }
+}
+.main-wave {
+  z-index: 4;
+  path {
+    fill: rgb(245, 245, 245);
+  }
+}
+.second-wave {
+  z-index: 3;
+  path {
+    fill: rgba(245, 245, 245, 0.2);
+  }
+}
+.third-wave {
+  z-index: 2;
+  path {
+    stroke: rgba(245, 245, 245, 0.3);
+  }
+}
